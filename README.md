@@ -4,7 +4,7 @@
 
 # VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding
 <!-- **VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding** -->
-This is the repo for Visual Contrastive Decoding, which is a simple, training-free method on mitigating hallucinations in LVLMs during decoding.
+This is the official repo for Visual Contrastive Decoding, a simple, training-free method for mitigating hallucinations in LVLMs during decoding.
 
 <div style='display:flex; gap: 0.25rem; '>
 <a href='LICENCE'><img src='https://img.shields.io/badge/License-MIT-g.svg'></a>
@@ -14,7 +14,7 @@ This is the repo for Visual Contrastive Decoding, which is a simple, training-fr
 ## Overview
 ![VCD](figs/figure1.png)
 
-To mitigate hallucinations in Large Vision-Language Models, we introduce Visual Contrastive Decoding (VCD), a simple and training-free method that contrasts output distributions derived from original and distorted visual inputs.
+We introduce Visual Contrastive Decoding (VCD) to mitigate hallucinations in Large Vision-Language Models. This simple, training-free method exploits the difference between output distributions derived from original and distorted visual inputs for more contextually aligned generation.
 
 
 ## How to use VCD
@@ -22,9 +22,10 @@ To mitigate hallucinations in Large Vision-Language Models, we introduce Visual 
 
 ## Experiment
 
+## Case Study
 
 ## Citation
-If you find our project useful, hope you can star our repo and cite our paper as follows:
+If you find our project useful, we hope you can star our repo and cite our paper as follows:
 ```
 @article{damonlpsgvcd,
   author = {Sicong Leng, Hang Zhang, Guanzheng Chen, Xin Li, Shijian Lu, Chunyan Miao, Lidong Bing},
