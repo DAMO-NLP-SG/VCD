@@ -1,0 +1,26 @@
+# Python
+*.pyc
+__pycache__
+*.egg-info
+dist
+*.csv
+*.tsv
+result
+playground/data
+val2014
+Hallucination/output
+
+answer_files_*
+build
+result
+POPE/*
+checkpoints/*
+bitsandbytes/*
+playground/data/val2014
+cuda_install.sh
+cuda_11.6.2_510.47.03_linux.run
+
+Hallucination/output/*
+.vscode/launch.json
+
+playground/data/coco_annotations
