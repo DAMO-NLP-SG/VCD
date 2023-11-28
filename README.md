@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-<a target="_blank"><img src="figs/VCD_logo.png" alt="Visual Contrastive Decoding" style="width: 50%; min-width: 200px; display: block; margin: auto;"></a>
+<a target="_blank"><img src="figs/VCD_logo_title.png" alt="Visual Contrastive Decoding" style="width: 75%; min-width: 200px; display: block; margin: auto;"></a>
 </p>
 
 # VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding
