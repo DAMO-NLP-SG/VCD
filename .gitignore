@@ -8,7 +8,6 @@ dist
 result
 playground/data
 val2014
-Hallucination/output
 
 answer_files_*
 build
@@ -20,7 +19,5 @@ playground/data/val2014
 cuda_install.sh
 cuda_11.6.2_510.47.03_linux.run
 
-Hallucination/output/*
 .vscode/launch.json
 
-playground/data/coco_annotations
