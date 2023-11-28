@@ -4,23 +4,39 @@
 
 # VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding
 <!-- **VCD: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding** -->
-This is the official repo for Visual Contrastive Decoding, a simple, training-free method for mitigating hallucinations in LVLMs during decoding.
+This is the official repo for Visual Contrastive Decoding, a simple, training-free method for mitigating hallucinations in LVLMs during decoding without utilizing external tools.
 
 <div style='display:flex; gap: 0.25rem; '>
 <a href='LICENCE'><img src='https://img.shields.io/badge/License-MIT-g.svg'></a>
 <a href='https://arxiv.org/abs/2306.02858'><img src='https://img.shields.io/badge/Paper-PDF-red'></a>
 </div>
 
-## Overview
+## 🔥 Update
+**[2023-11]: Paper submitted to Arxiv. Check out [VCD]() for details.**
+
+## 🎯 Overview
+We introduce Visual Contrastive Decoding (VCD), **a simple and training-free** method that contrasts output distributions derived from original and distorted visual inputs.
+The proposed VCD effectively reduces the over-reliance on **statistical bias** and **unimodal priors**, two essential causes of object hallucinations.
+This adjustment ensures the generated content is closely grounded to visual inputs, resulting in **contextually accurate outputs**.
+
 ![VCD](figs/figure1.png)
 
-We introduce Visual Contrastive Decoding (VCD) to mitigate hallucinations in Large Vision-Language Models. This simple, training-free method exploits the difference between output distributions derived from original and distorted visual inputs for more contextually aligned generation.
+Specifically, given a textual query ${x}$ and a visual input ${v}$, the model generates two distinct output distributions: one conditioned on the original ${v}$ and the other on the distorted visual input ${v'}$, which is derived by applying pre-defined distortions (i.e., Gaussian noise mask) to ${v}$. 
+Then, a new contrastive probability distribution is computed by exploiting the differences between the two initially obtained distributions. 
+The new contrastive distribution $p_{vcd}$ is formulated as:
+```math
+p_{vcd}(y \mid v, v', x) = softmax[ (1+\alpha)\times logit_\theta (y \mid v, x) - \alpha \times logit_\theta(y \mid v', x)],
+```
+where larger $\alpha$ values indicate a stronger amplification of differences between the two distributions ($\alpha=0$ reduces to regular decoding). 
+From the adjusted output distribution $p_{vcd}$, we can apply various sampling strategies, such as nucleus sampling and beam search.
 
 
-## How to use VCD
+## 🕹️ How to use VCD
 
 
-## Experiment
+## Experiments
+Our experiments show that VCD, without either additional training or the usage of external tools, significantly mitigates the object hallucination issue across different LVLM families. 
+Beyond mitigating object hallucinations, VCD also excels in general LVLM benchmarks, highlighting its wide-ranging applicability.
 
 ## Case Study
 ![Case1](figs/case.jpg)
