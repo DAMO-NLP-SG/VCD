@@ -26,6 +26,10 @@ We introduce Visual Contrastive Decoding (VCD) to mitigate hallucinations in Lar
 ![Case1](figs/case.jpg)
 Illustration of hallucination correction by our proposed VCD with two samples from LLaVA-Bench. Hallucinated objects from LVLM's regular decoding are highlighted in red.
 
+![Case2](figs/case_hallu.jpg)
+More examples from LLaVA-Bench of our proposed VCD for hallucination corrections. Hallucinated objects from LVLM's regular decoding are highlighted in red.
+
+
 
 
 ## Citation
