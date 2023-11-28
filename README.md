@@ -12,7 +12,9 @@ This is the official repo for Visual Contrastive Decoding, a simple, training-fr
 </div>
 
 ## 🔥 Update
-**[2023-11]: Paper submitted to Arxiv. Check out [VCD]() for details.**
+**[2023-11-29]: Paper submitted to Arxiv. Check out [VCD]() for details.**
+
+**[2023-11-28]: Codes released.**
 
 ## 🎯 Overview
 We introduce Visual Contrastive Decoding (VCD), **a simple and training-free** method that contrasts output distributions derived from original and distorted visual inputs.
@@ -60,7 +62,6 @@ More examples from LLaVA-Bench of our proposed VCD for enhanced general percepti
 ![Case3](figs/case_hallu.jpg)
 More examples from LLaVA-Bench of our proposed VCD for hallucination corrections. Hallucinated objects from LVLM's regular decoding are highlighted in red.
 
-## 🧐 Why It Works
 
 ## 📑 Citation
 If you find our project useful, we hope you can star our repo and cite our paper as follows:
@@ -71,8 +72,6 @@ If you find our project useful, we hope you can star our repo and cite our paper
   year = 2023,
 }
 ```
-
-## 👨‍🏫 Acknowledgements
 
 ## 📝 Related Projects
 - [Contrastive Decoding: Open-ended Text Generation as Optimization](https://github.com/XiangLi1999/ContrastiveDecoding)
