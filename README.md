@@ -38,6 +38,9 @@ From the adjusted output distribution $p_{vcd}$, we can apply various sampling s
 Our experiments show that VCD, without either additional training or the usage of external tools, significantly mitigates the object hallucination issue across different LVLM families. 
 Beyond mitigating object hallucinations, VCD also excels in general LVLM benchmarks, highlighting its wide-ranging applicability.
 
+![exp1](figs/exp1.png)
+Results on POPE. Regular decoding denotes direct sampling, whereas VCD refers to sampling from our proposed contrastive distribution pvcd. The best performances within each setting are bolded.
+
 ## 📌 Case Study
 ![Case1](figs/case.jpg)
 Illustration of hallucination correction by our proposed VCD with two samples from LLaVA-Bench. Hallucinated objects from LVLM's regular decoding are highlighted in red.
