@@ -44,7 +44,8 @@ Results on POPE. Regular decoding denotes direct sampling, whereas VCD refers to
 ![exp2](figs/exp2.png)
 MME full set results on LLaVA-1.5. VCD consistently enhances LVLMs’ perception capacities while preserving their recognition competencies.
 
-![exp3](figs/exp3.png)
+<img src="figs/exp3.png" width="500" height="250">
+
 Results of GPT-4V-aided evaluation on open-ended generation. Accuracy measures the response’s alignment with the image content, and Detailedness gauges the richness of details in the response. Both metrics are on a scale of 10.
 
 
