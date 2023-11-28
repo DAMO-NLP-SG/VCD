@@ -34,11 +34,11 @@ From the adjusted output distribution $p_{vcd}$, we can apply various sampling s
 ## 🕹️ How to use VCD
 
 
-## Experiments
+## 🏅 Experiments
 Our experiments show that VCD, without either additional training or the usage of external tools, significantly mitigates the object hallucination issue across different LVLM families. 
 Beyond mitigating object hallucinations, VCD also excels in general LVLM benchmarks, highlighting its wide-ranging applicability.
 
-## Case Study
+## 📌 Case Study
 ![Case1](figs/case.jpg)
 Illustration of hallucination correction by our proposed VCD with two samples from LLaVA-Bench. Hallucinated objects from LVLM's regular decoding are highlighted in red.
 
@@ -48,9 +48,9 @@ More examples from LLaVA-Bench of our proposed VCD for enhanced general percepti
 ![Case3](figs/case_hallu.jpg)
 More examples from LLaVA-Bench of our proposed VCD for hallucination corrections. Hallucinated objects from LVLM's regular decoding are highlighted in red.
 
+## 🧐 Why It Works
 
-
-## Citation
+## 📑 Citation
 If you find our project useful, we hope you can star our repo and cite our paper as follows:
 ```
 @article{damonlpsgvcd,
@@ -59,3 +59,8 @@ If you find our project useful, we hope you can star our repo and cite our paper
   year = 2023,
 }
 ```
+
+## 👨‍🏫 Acknowledgements
+
+## 📝 Related Projects
+- [Contrastive Decoding: Open-ended Text Generation as Optimization](https://github.com/XiangLi1999/ContrastiveDecoding)
