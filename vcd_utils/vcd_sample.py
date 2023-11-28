@@ -8,14 +8,18 @@ import torch
 import torch.distributed as dist
 from torch import nn
 
-from .logits_process import (
+from transformers.generation.logits_process import (
     LogitsProcessorList,
 )
-from .stopping_criteria import (
+from transformers.generation.stopping_criteria import (
     StoppingCriteria,
     StoppingCriteriaList,
     validate_stopping_criteria,
 )
+import transformers
+from transformers.generation.utils import SampleOutput
+
+
 
 def sample(
     self,
@@ -124,7 +128,7 @@ def sample(
         model_kwargs_cd = model_kwargs.copy()
 
         if use_cd:
-            ## cd_commets: forward pass of the model with distorted image input
+            ## cd_comments: forward pass of the model with distorted image input
             model_inputs_cd = self.prepare_inputs_for_generation_cd(input_ids, **model_kwargs_cd)
             outputs_cd = self(
                 **model_inputs_cd,
@@ -134,7 +138,7 @@ def sample(
             )
             next_token_logits_cd = outputs_cd.logits[:, -1, :]
             
-            ## cd_commets: pre-process logits from contrastive inputs
+            ## cd_comments: pre-process logits from contrastive inputs
             cd_alpha = model_kwargs.get("cd_alpha") if model_kwargs.get("cd_alpha") is not None else 0.5
             cd_beta = model_kwargs.get("cd_beta") if model_kwargs.get("cd_beta") is not None else 0.1
             
@@ -148,7 +152,7 @@ def sample(
             diffs = (1+cd_alpha)*next_token_logits - cd_alpha*next_token_logits_cd
             cd_logits = diffs.masked_fill(next_token_logits < cutoff, -float("inf"))
 
-            ## cd_commets: apply temperature warping and top-k filtering in contrastive decoding
+            ## cd_comments: apply temperature warping and top-k filtering in contrastive decoding
             cd_logits = logits_processor(input_ids, cd_logits)
             cd_logits = logits_warper(input_ids, cd_logits)
 
@@ -195,7 +199,7 @@ def sample(
         model_kwargs = self._update_model_kwargs_for_generation(
             outputs, model_kwargs, is_encoder_decoder=self.config.is_encoder_decoder
         )
-        ## cd_commets: update model_kwargs_cd for contrastive decoding
+        ## cd_comments: update model_kwargs_cd for contrastive decoding
         if use_cd:
             model_kwargs_cd = self._update_model_kwargs_for_generation(
                 outputs_cd, model_kwargs_cd, is_encoder_decoder=self.config.is_encoder_decoder
@@ -241,3 +245,6 @@ def sample(
             )
     else:
         return input_ids
+
+def evolve_vcd_sampling():
+    transformers.generation.utils.GenerationMixin.sample = sample
