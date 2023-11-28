@@ -12,9 +12,8 @@ This is the official repo for Visual Contrastive Decoding, a simple, training-fr
 </div>
 
 ## 🔥 Update
-**[2023-11-29]: Paper submitted to Arxiv. Check out [this link]() for details.**
-
-**[2023-11-28]: Codes released.**
+* [2023-11-29]: ⭐️ Paper of VCD online. Check out [this link]() for details.
+* [2023-11-28]: 🚀🚀 Codes released.
 
 ## 🎯 Overview
 ![VCD](figs/figure1.png)
@@ -26,7 +25,18 @@ p_{vcd}(y \mid v, v', x) = softmax[ (1+\alpha)\times logit_\theta (y \mid v, x) 
 - The proposed VCD effectively reduces the over-reliance on **statistical bias** and **unimodal priors**, two essential causes of object hallucinations.
 
 
-## 🕹️ How to use VCD
+## 🕹️ Usage
+### Environment Setup
+```bash
+conda create -yn vcd python=3.9
+conda activate vcd
+
+https://github.com/DAMO-NLP-SG/VCD.git
+cd VCD
+pip install -r requirements.txt
+```
+
+### How to Use VCD in LVLMs
 
 
 ## 🏅 Experiments
@@ -47,7 +57,7 @@ p_{vcd}(y \mid v, v', x) = softmax[ (1+\alpha)\times logit_\theta (y \mid v, x) 
 
 
 
-## 📌 Case Study
+## 📌 Examples
 ![Case1](figs/case.jpg)
 *figure 5. Illustration of hallucination correction by our proposed VCD with two samples from LLaVA-Bench. Hallucinated objects from LVLM's regular decoding are highlighted in red.*
 
@@ -61,10 +71,12 @@ p_{vcd}(y \mid v, v', x) = softmax[ (1+\alpha)\times logit_\theta (y \mid v, x) 
 ## 📑 Citation
 If you find our project useful, we hope you can star our repo and cite our paper as follows:
 ```
-@article{damonlpsgvcd,
+@article{damonlpsg2023vcd,
   author = {Sicong Leng, Hang Zhang, Guanzheng Chen, Xin Li, Shijian Lu, Chunyan Miao, Lidong Bing},
   title = {Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding},
   year = 2023,
+  journal = {arXiv preprint arXiv:xxx},
+  url = {https://arxiv.org/abs/xxxx}
 }
 ```
 
