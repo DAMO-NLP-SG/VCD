@@ -7,14 +7,13 @@
 This is the official repo for Visual Contrastive Decoding, a simple, training-free method for mitigating hallucinations in LVLMs during decoding without utilizing external tools.
 
 <div style='display:flex; gap: 0.25rem; '>
-<a href='LICENCE'><img src='https://img.shields.io/badge/License-MIT-g.svg'></a>
+<a href='LICENCE'><img src='https://img.shields.io/badge/License-Apache 2.0-g.svg'></a>
 <a href='https://arxiv.org/abs/2306.02858'><img src='https://img.shields.io/badge/Paper-PDF-red'></a>
 </div>
 
 ## 🔥 Update
-**[2023-11-29]: Paper submitted to Arxiv. Check out [this link]() for details.**
-
-**[2023-11-28]: Codes released.**
+* [2023-11-29]: ⭐️ Paper of VCD online. Check out [this link]() for details.
+* [2023-11-28]: 🚀🚀 Codes released.
 
 ## 🎯 Overview
 ![VCD](figs/figure1.png)
@@ -26,7 +25,18 @@ p_{vcd}(y \mid v, v', x) = softmax[ (1+\alpha)\times logit_\theta (y \mid v, x) 
 - The proposed VCD effectively reduces the over-reliance on **statistical bias** and **unimodal priors**, two essential causes of object hallucinations.
 
 
-## 🕹️ How to use VCD
+## 🕹️ Usage
+### Environment Setup
+```bash
+conda create -yn vcd python=3.9
+conda activate vcd
+
+https://github.com/DAMO-NLP-SG/VCD.git
+cd VCD
+pip install -r requirements.txt
+```
+
+### How to Use VCD in LVLMs
 
 
 ## 🏅 Experiments
@@ -47,7 +57,7 @@ p_{vcd}(y \mid v, v', x) = softmax[ (1+\alpha)\times logit_\theta (y \mid v, x) 
 
 
 
-## 📌 Case Study
+## 📌 Examples
 ![Case1](figs/case.jpg)
 *figure 5. Illustration of hallucination correction by our proposed VCD with two samples from LLaVA-Bench. Hallucinated objects from LVLM's regular decoding are highlighted in red.*
 
@@ -61,12 +71,17 @@ p_{vcd}(y \mid v, v', x) = softmax[ (1+\alpha)\times logit_\theta (y \mid v, x) 
 ## 📑 Citation
 If you find our project useful, we hope you can star our repo and cite our paper as follows:
 ```
-@article{damonlpsgvcd,
+@article{damonlpsg2023vcd,
   author = {Sicong Leng, Hang Zhang, Guanzheng Chen, Xin Li, Shijian Lu, Chunyan Miao, Lidong Bing},
   title = {Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding},
   year = 2023,
+  journal = {arXiv preprint arXiv:xxx},
+  url = {https://arxiv.org/abs/xxxx}
 }
 ```
 
 ## 📝 Related Projects
-- [Contrastive Decoding: Open-ended Text Generation as Optimization](https://github.com/XiangLi1999/ContrastiveDecoding)
+- [Contrastive Decoding](https://github.com/XiangLi1999/ContrastiveDecoding): Open-ended Text Generation as Optimization
+- [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip): Towards General-purpose Vision-Language Models with Instruction Tuning
+- [Qwen-VL](https://github.com/QwenLM/Qwen-VL): A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond
+- [LLaVA 1.5](https://github.com/haotian-liu/LLaVA): Improved Baselines with Visual Instruction Tuning
