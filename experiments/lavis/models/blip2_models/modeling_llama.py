@@ -647,6 +647,7 @@ class LlamaForCausalLM(LlamaPreTrainedModel):
         inputs_embeds: Optional[torch.FloatTensor] = None,
         images_cd: Optional[torch.FloatTensor] = None,
         cd_beta: Optional[torch.FloatTensor] = None,
+        cd_alpha: Optional[torch.FloatTensor] = None,
         labels: Optional[torch.LongTensor] = None,
         use_cache: Optional[bool] = None,
         output_attentions: Optional[bool] = None,

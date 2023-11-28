@@ -251,7 +251,8 @@ class Blip2VicunaInstruct(Blip2Base):
         num_captions=1,
         temperature=1,
         images_cd=None,
-        cd_beta=None
+        cd_beta=None,
+        cd_alpha=None
     ):
         self.llm_tokenizer.padding_side = "left"
 
@@ -395,7 +396,8 @@ class Blip2VicunaInstruct(Blip2Base):
                 length_penalty=length_penalty,
                 num_return_sequences=num_captions,
                 images_cd=inputs_embeds_cd if images_cd is not None else None,
-                cd_beta=cd_beta if cd_beta is not None else None
+                cd_beta=cd_beta if cd_beta is not None else None,
+                cd_alpha=cd_alpha if cd_alpha is not None else None
             )
 
         outputs[outputs == 0] = 2 # convert output id 0 to 2 (eos_token_id)

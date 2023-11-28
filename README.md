@@ -30,13 +30,11 @@ p_{vcd}(y \mid v, v', x) = softmax[ (1+\alpha)\times logit_\theta (y \mid v, x) 
 ```bash
 conda create -yn vcd python=3.9
 conda activate vcd
-
-https://github.com/DAMO-NLP-SG/VCD.git
 cd VCD
 pip install -r requirements.txt
 ```
 
-### How to Use VCD in LVLMs
+<!-- ### How to Use VCD in LVLMs -->
 
 
 ## 🏅 Experiments

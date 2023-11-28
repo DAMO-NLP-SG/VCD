@@ -24,7 +24,7 @@ model:
   num_query_token: 32
 
   # cd_comments: set right path for vicuna
-  llm_model: "./checkpoints/vicuna-7b-v1.1"
+  llm_model: "/mnt/workspace/ckpt/vicuna-7b-v1.1"
 
   # generation configs
   prompt: ""
