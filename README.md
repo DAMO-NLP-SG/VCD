@@ -73,8 +73,8 @@ If you find our project useful, we hope you can star our repo and cite our paper
   author = {Sicong Leng, Hang Zhang, Guanzheng Chen, Xin Li, Shijian Lu, Chunyan Miao, Lidong Bing},
   title = {Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding},
   year = 2023,
-  journal = {arXiv preprint arXiv:xxx},
-  url = {https://arxiv.org/abs/xxxx}
+  journal = {arXiv preprint arXiv:2311.16922},
+  url = {https://arxiv.org/abs/2311.16922}
 }
 ```
 
