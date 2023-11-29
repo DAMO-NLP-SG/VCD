@@ -33,18 +33,6 @@ conda activate vcd
 cd VCD
 pip install -r requirements.txt
 ```
-Sure, I'll translate and refine the Chinese section of your GitHub README file into English. Here's the translation:
-
----
-
-## 🕹️ Usage
-### Environment Setup
-```bash
-conda create -yn vcd python=3.9
-conda activate vcd
-cd VCD
-pip install -r requirements.txt
-```
 
 ### How to Use VCD in LVLMs
 
