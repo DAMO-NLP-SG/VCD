@@ -33,9 +33,52 @@ conda activate vcd
 cd VCD
 pip install -r requirements.txt
 ```
+Sure, I'll translate and refine the Chinese section of your GitHub README file into English. Here's the translation:
 
-<!-- ### How to Use VCD in LVLMs -->
+---
 
+## 🕹️ Usage
+### Environment Setup
+```bash
+conda create -yn vcd python=3.9
+conda activate vcd
+cd VCD
+pip install -r requirements.txt
+```
+
+### How to Use VCD in LVLMs
+
+The two core function of VCD, adding noise to images and generating text based on VCD sampling, are found in the `vcd_utils` folder. Scripts for using VCD sampling in LLaVA, InstructBLIP, and QwenVL are located in `VCD/eval`. We have annotated some key changes with `## cd_comment` for easy location using ctrl+f.
+
+To help you get started quickly, here's an example using LLaVA on how to replace the conventional sampling method with the VCD method during generation:
+1. Add the following at the beginning of the start-up script:
+```python
+from vcd_utils.vcd_sample import evolve_vcd_sampling
+evolve_vcd_sampling()
+```
+The `evolve_vcd_sampling` function replaces the sampling function in the transformers library. The modified sampling function includes an option for visual contrastive decoding, while keeping the rest unchanged.
+
+2. Slightly modify `llava_llama.py`:
+
+   a. Add contrastive decoding parameters in the `LlavaLlamaForCausalLM` class's `forward` function to avoid exceptions in `model.generate`.
+   
+   b. Add the `prepare_inputs_for_generation_cd` function.
+
+3. Add noise to the image:
+```python
+from vcd_utils.vcd_add_noise import add_diffusion_noise
+image_tensor_cd = add_diffusion_noise(image_tensor, args.noise_step)
+```
+set the hyperparameter in the `generate` function:
+```python
+output_ids = model.generate(
+    input_ids,
+    images=image_tensor.unsqueeze(0).half().cuda(),
+    images_cd=(image_tensor_cd.unsqueeze(0).half().cuda() if image_tensor_cd is not None else None),
+    cd_alpha = args.cd_alpha,
+    cd_beta = args.cd_beta,
+    do_sample=True)
+```
 
 ## 🏅 Experiments
 - **VCD significantly mitigates the object hallucination issue across different LVLM families.**
@@ -51,7 +94,7 @@ pip install -r requirements.txt
 
 *table 3. Results of GPT-4V-aided evaluation on open-ended generation. Accuracy measures the response’s alignment with the image content, and Detailedness gauges the richness of details in the response. Both metrics are on a scale of 10.*
 
-- **Please refer to [our paper]() for detailed experimental results.**
+- **Please refer to [our paper](https://arxiv.org/abs/2311.16922) for detailed experimental results.**
 
 
 
