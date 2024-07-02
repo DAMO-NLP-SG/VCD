@@ -13,8 +13,9 @@ This is the official repo for Visual Contrastive Decoding, a simple, training-fr
 </div>
 
 ## 🔥 Update
+* [2024-04-05]: ⭐️⭐️⭐️ VCD is selected as Poster Highlight in CVPR 2024! (Top 11.9% in accepted papers)
 * [2023-11-29]: ⭐️ Paper of VCD online. Check out [this link](https://arxiv.org/abs/2311.16922) for details.
-* [2023-11-28]: 🚀🚀 Codes released.
+* [2023-11-28]: 🚀 Codes released.
 
 ## 🎯 Overview
 ![VCD](figs/figure1.png)
