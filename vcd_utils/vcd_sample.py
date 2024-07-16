@@ -87,7 +87,7 @@ def sample(
     unfinished_sequences = torch.ones(input_ids.shape[0], dtype=torch.long, device=input_ids.device)
 
     this_peer_finished = False  # used by synced_gpus only
-
+    model_kwargs_cd = model_kwargs.copy() # copy model_kwargs for cd only for the first forward process
     # auto-regressive generation
     while True:
         if synced_gpus:
@@ -125,7 +125,7 @@ def sample(
         output_hidden_states_wo_img = (
             output_hidden_states if output_hidden_states is not None else self.generation_config.output_hidden_states
         )
-        model_kwargs_cd = model_kwargs.copy()
+        
 
         if use_cd:
             ## cd_comments: forward pass of the model with distorted image input
