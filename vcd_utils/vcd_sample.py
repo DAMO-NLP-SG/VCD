@@ -248,3 +248,5 @@ def sample(
 
 def evolve_vcd_sampling():
     transformers.generation.utils.GenerationMixin.sample = sample
+    # sample is now a protected function in the latest Transformers library
+    transformers.generation.utils.GenerationMixin._sample = sample
