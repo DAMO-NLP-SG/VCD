@@ -7,7 +7,7 @@ shortuuid
 accelerate==0.21.0
 peft==0.4.0
 bitsandbytes==0.41.0
-numpy
+numpy==1.26.4
 scikit-learn==1.2.2
 gradio==3.35.2
 gradio_client==0.2.9
